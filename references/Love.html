@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>❤ Love ❤</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Noto+Sans+Myanmar:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Noto+Sans+Myanmar:wght@400;500;600;700;800&display=swap');
+:root{--ice:#dff5ff;--lilac:#e9dfff;--ink:#34395f;--violet:#9381d9}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}
+body{font-family:'DM Sans','Noto Sans Myanmar','Myanmar Text',sans-serif;color:var(--ink);overflow:hidden;background:radial-gradient(ellipse at 12% 16%,#d3efff 0%,transparent 36%),radial-gradient(ellipse at 88% 18%,#e4d7ff 0%,transparent 38%),radial-gradient(ellipse at 54% 100%,#e8eaff 0%,transparent 42%),linear-gradient(130deg,#f6faff,#f3efff 58%,#eef8ff);background-size:150% 150%;animation:bgMove 20s ease infinite}
+@keyframes bgMove{0%{background-position:0% 28%}50%{background-position:100% 72%}100%{background-position:0% 28%}}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:8}.hearts span{position:absolute;bottom:-60px;animation:rise linear infinite;opacity:0;color:#a493e8;filter:drop-shadow(0 4px 10px rgba(130,139,210,.25))}@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.68}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+.scene{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}.scene.active{opacity:1;visibility:visible}
+.card{position:relative;isolation:isolate;text-align:center;max-width:650px;width:calc(100% - 36px);padding:clamp(34px,7vw,62px) clamp(22px,6vw,52px);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,255,255,.62));border:1px solid rgba(255,255,255,.96);backdrop-filter:blur(22px);box-shadow:0 28px 85px rgba(91,99,154,.18),inset 0 1px 0 #fff;animation:cardIn 1s cubic-bezier(.2,.9,.3,1.2)}
+.card:before{content:'';position:absolute;z-index:-1;inset:9px;border:1px solid rgba(164,153,222,.2);border-radius:26px;pointer-events:none}.card:after{content:'✦';position:absolute;top:19px;right:25px;color:#aaa0df;font-size:15px;opacity:.8}
+@keyframes cardIn{from{transform:translateY(42px) scale(.94);opacity:0}to{transform:none;opacity:1}}
+.scene-kicker{color:#9185c0;font-size:9px;font-weight:800;letter-spacing:2.3px;margin-bottom:22px}.big{font-size:48px;display:inline-block;animation:pulse 1.8s ease infinite;filter:drop-shadow(0 8px 15px rgba(155,131,219,.22))}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}.card p{font-size:clamp(17px,4.2vw,22px);line-height:2.05;margin:20px 0 28px;font-weight:600;color:#41496e;text-shadow:0 2px 12px rgba(104,109,158,.08)}.card-foot{margin-top:27px;color:#a2a0bd;font-size:8px;font-weight:700;letter-spacing:2.1px}
+.btn{cursor:pointer;border:none;font-family:inherit;font-size:15px;font-weight:800;color:#fff;padding:14px 30px;border-radius:999px;background:linear-gradient(115deg,#78b9ed,#9383e4);box-shadow:0 9px 26px rgba(121,141,214,.32);transition:.25s}.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 34px rgba(121,141,214,.42)}.btn:active{transform:scale(.97)}
+#cd{position:fixed;inset:0;z-index:9;display:none;align-items:center;justify-content:center;flex-direction:column;background:rgba(47,47,91,.78);backdrop-filter:blur(9px)}#cdNum{font-size:110px;font-weight:800;color:#d9eaff;text-shadow:0 0 40px #9c96f1;animation:pop 1s ease}@keyframes pop{0%{transform:scale(.3);opacity:0}45%{transform:scale(1.2);opacity:1}100%{transform:scale(1);opacity:1}}#cdTxt{margin-top:12px;color:#f3eeff;font-size:15px}
+#final{position:fixed;inset:0;z-index:3;display:none;overflow:hidden}#photos{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#fff 0%,#edf5ff 46%,#e9e1ff 100%)}#photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.8s ease;transform:scale(1.025)}#photos img.on{opacity:1}.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(249,249,255,.14),rgba(233,231,255,.04) 42%,rgba(28,30,65,.40));pointer-events:none}
+.aurora{position:absolute;pointer-events:none;border-radius:50%;filter:blur(1px);opacity:.65;mix-blend-mode:screen}.aurora.one{width:min(58vw,660px);height:min(58vw,660px);top:-34%;left:-18%;background:radial-gradient(circle,rgba(139,210,255,.46),transparent 68%);animation:driftA 13s ease-in-out infinite alternate}.aurora.two{width:min(62vw,720px);height:min(62vw,720px);right:-21%;bottom:-44%;background:radial-gradient(circle,rgba(190,148,255,.45),transparent 68%);animation:driftB 15s ease-in-out infinite alternate}@keyframes driftA{to{transform:translate(14vw,13vh) scale(1.18)}}@keyframes driftB{to{transform:translate(-12vw,-11vh) scale(1.13)}}
+.topline{position:absolute;z-index:4;top:clamp(20px,5vh,42px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:15px;max-width:calc(100% - 30px);padding:10px 19px;border-radius:999px;background:rgba(255,255,255,.56);border:1px solid rgba(255,255,255,.78);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(71,81,130,.09);white-space:nowrap}.topline .orn{color:#9c8fd9;font-size:12px}.topline .top-copy{font-size:9px;font-weight:800;color:#68668f;letter-spacing:2px;text-overflow:ellipsis;overflow:hidden}#songTitle{position:static;font-size:inherit;color:inherit;letter-spacing:inherit;text-shadow:none;opacity:1}
+#lyricWrap{position:absolute;z-index:4;inset:0;display:flex;align-items:center;justify-content:center;padding:clamp(22px,7vw,80px) 20px clamp(100px,19vh,160px)}#lyric{position:relative;isolation:isolate;max-width:780px;width:100%;text-align:center;padding:clamp(38px,7vw,70px) clamp(22px,7vw,72px);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.83),rgba(255,255,255,.55));backdrop-filter:blur(26px) saturate(1.25);border:1px solid rgba(255,255,255,.91);box-shadow:0 32px 100px rgba(53,58,111,.20),inset 0 1px 0 rgba(255,255,255,.98);overflow:hidden;transition:background .5s,border-color .5s}
+#lyric:before{content:'';position:absolute;inset:10px;border:1px solid rgba(157,143,218,.23);border-radius:26px;pointer-events:none}#lyric:after{content:'♡';position:absolute;top:13px;right:23px;font-size:19px;color:#a58edb;opacity:.65}body.hasPhoto #lyric{background:linear-gradient(145deg,rgba(36,37,76,.58),rgba(67,61,119,.4));border-color:rgba(255,255,255,.52);box-shadow:0 32px 100px rgba(20,20,52,.32),inset 0 1px 0 rgba(255,255,255,.38)}
+.lyric-kicker{position:relative;color:#8c83b8;font-size:9px;font-weight:800;letter-spacing:3px;margin-bottom:25px}body.hasPhoto .lyric-kicker{color:#e3dcff}.verse-no{display:inline-flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:50%;margin-bottom:21px;border:1px solid rgba(156,143,218,.38);color:#8f83c4;font-size:10px;font-weight:800;letter-spacing:1px}body.hasPhoto .verse-no{color:#f0eaff;border-color:rgba(255,255,255,.4)}
+#lyric .hi{font-family:'Noto Sans Myanmar','Myanmar Text',sans-serif;font-size:clamp(21px,4.2vw,34px);font-weight:700;color:#7065a8;text-shadow:0 5px 25px rgba(151,137,211,.16);line-height:1.9;letter-spacing:.05px}body.hasPhoto #lyric .hi{color:#fff;text-shadow:0 3px 24px rgba(19,18,45,.34)}#lyric .separator{display:flex;align-items:center;justify-content:center;gap:13px;margin:22px auto 17px;color:#a797dc;font-size:13px}#lyric .separator:before,#lyric .separator:after{content:'';height:1px;width:52px;background:linear-gradient(90deg,transparent,rgba(157,143,218,.56))}#lyric .separator:after{transform:rotate(180deg)}body.hasPhoto #lyric .separator{color:#e0d5ff}body.hasPhoto #lyric .separator:before,body.hasPhoto #lyric .separator:after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.72))}
+#lyric .my{font-size:clamp(14px,3.5vw,18px);line-height:2;color:#7b7a99;font-weight:500}body.hasPhoto #lyric .my{color:rgba(255,255,255,.9)}.lyIn{animation:lyIn .95s cubic-bezier(.2,.8,.3,1.1) both}@keyframes lyIn{from{opacity:0;transform:translateY(38px) scale(.94);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}.lyOut{animation:lyOut .48s ease both}@keyframes lyOut{to{opacity:0;transform:translateY(-26px);filter:blur(7px)}}
+.player-panel{position:absolute;z-index:5;left:50%;bottom:clamp(21px,5vh,42px);transform:translateX(-50%);width:min(470px,calc(100% - 42px));padding:14px 18px 13px;border-radius:20px;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(18px);box-shadow:0 12px 38px rgba(54,57,105,.12)}body.hasPhoto .player-panel{background:rgba(33,32,67,.52);border-color:rgba(255,255,255,.26)}.player-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px;color:#757196;font-size:9px;font-weight:700;letter-spacing:1px}body.hasPhoto .player-meta{color:rgba(255,255,255,.86)}#timeMark{font-variant-numeric:tabular-nums;letter-spacing:1px}.progress-track{height:4px;border-radius:99px;background:rgba(128,126,170,.19);overflow:hidden}#prog{height:100%;width:0;background:linear-gradient(90deg,#82cafa,#a28be9,#d0a7ef);box-shadow:0 0 12px rgba(161,139,233,.55);border-radius:99px;transition:width .15s linear}
+#playBtn{position:absolute;z-index:7;left:50%;bottom:calc(clamp(21px,5vh,42px) + 78px);transform:translateX(-50%);display:none;white-space:nowrap;padding:12px 24px;font-size:13px}#end{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;background:rgba(42,39,82,.68);backdrop-filter:blur(14px)}#end .card{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(241,238,255,.88))}#end h2{font-size:clamp(20px,5vw,30px);line-height:2;margin:14px 0 8px;color:#42496c}#end .note{color:#8386aa;margin-bottom:24px;font-size:14px}
+@media(max-width:560px){.topline{top:18px;padding:9px 14px;gap:9px}.topline .top-copy{font-size:8px;letter-spacing:1.4px}#lyricWrap{padding:78px 15px 133px}#lyric{padding:39px 20px;border-radius:27px}.lyric-kicker{margin-bottom:17px;font-size:8px;letter-spacing:2px}.verse-no{margin-bottom:14px}#lyric .hi{font-size:clamp(19px,5.2vw,27px);line-height:1.85}#lyric .separator{margin:15px auto 11px}.player-panel{bottom:16px;padding:12px 15px}.card-foot{font-size:7px;letter-spacing:1.3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="noPhoto">
+<div class="hearts" id="hearts"></div>
+
+<section class="scene active" id="s1"><div class="card"><div class="scene-kicker">✦&nbsp; A MESSAGE FROM MY HEART &nbsp;✦</div><span class="big">💌</span><p>ဆရာမကို ပြောစရာလေးရှိလို့ပါဗျာ</p><button class="btn" onclick="go(2)">ပြောလေ 💬</button><div class="card-foot">MADE WITH LOVE · JUST FOR YOU</div></div></section>
+<section class="scene" id="s2"><div class="card"><div class="scene-kicker">✦&nbsp; JUST ONE LITTLE QUESTION &nbsp;✦</div><span class="big">🥺</span><p>ဆရာမက ဘာလို့အခြားသူတွေနဲ့မတူရတာလဲ?</p><button class="btn" onclick="go(3)">ဘာလို့လဲ? 🤔</button><div class="card-foot">SOMETHING I HAVE BEEN WANTING TO SAY</div></div></section>
+<section class="scene" id="s3"><div class="card"><div class="scene-kicker">✦&nbsp; MY FAVORITE PERSON &nbsp;✦</div><span class="big">💗</span><p>ကျွန်တော်ရဲ့ နှလုံးသားထဲမှာ အခြားသူတွေထက် ဆရာမကိုပဲ အမြဲမေတ္တာတွယ်ကပ်နေလို့လေ</p><button class="btn" onclick="go(4)">Next ➜</button><div class="card-foot">EVERY LITTLE THING LEADS BACK TO YOU</div></div></section>
+<section class="scene" id="s4"><div class="card"><div class="scene-kicker">✦&nbsp; A LITTLE SURPRISE &nbsp;✦</div><span class="big">🎁</span><p>ဒါနဲ့ ဆရာမအတွက် ပြောချင်စရာလေးတွေရှိလို့ ကြည့်ချင်လားနော</p><button class="btn" onclick="startCount()">ကြည့်မယ် 👀</button><div class="card-foot">WITH ALL THE LOVE IN MY HEART</div></div></section>
+
+<div id="cd"><div id="cdNum">3</div><div id="cdTxt">💘 စောင့်ကြည့်နော... 💘</div></div>
+
+<section id="final">
+<div id="photos"></div>
+<div class="aurora one"></div><div class="aurora two"></div>
+<div class="shade"></div>
+<div class="topline"><span class="orn">✦</span><span class="top-copy">A LOVE NOTE&nbsp; · &nbsp;<span id="songTitle">ဆရာမ အတွက် သီးသန့် ❤</span></span><span class="orn">✦</span></div>
+<div id="lyricWrap"><div id="lyric"><div class="lyric-kicker">A LITTLE VERSE, JUST FOR YOU</div><div class="verse-no">01</div><div class="hi"></div><div class="separator">✧</div><div class="my"></div></div></div>
+<div class="player-panel"><div class="player-meta"><span>♫&nbsp; PLAYING FROM THE HEART</span><span id="timeMark">00:00</span></div><div class="progress-track"><div id="prog"></div></div></div>
+<button id="playBtn" class="btn" onclick="tryPlay()">▶&nbsp; သီချင်းဖွင့်ရန် နှိပ်ပါ</button>
+</section>
+
+<div id="end"><div class="card"><span class="big">❤️</span><h2>ဆရာမကို အရမ်းချစ်တယ်ဗျာ ❤</h2><div class="note">— အဆုံးမရှိတဲ့ ချစ်ခြင်းမေတ္တာနဲ့ —</div><button class="btn" onclick="location.reload()">↺ ပြန်ကြည့်မယ်</button></div></div>
+
+<audio id="au" src="https://www.image2url.com/r2/default/audio/1791817688019-0b66c79e-e637-40ec-ae74-a096f881ff77.mp3" preload="auto"></audio>
+
+<script>
+var LYRICS=[[0,"ဘုရားသခင်ဆရာမလေးကိုဖန်ဆင်းဖို့အတွက်"],[4,"ကမ္ဘာကြီးရဲ့အလှတရားတွေကို အဆုံးပြုလိုက်ပုံပါဘဲ"],[10,"ဆရာမလေးရဲ့မျက်ဝန်းက ကာဂျယ်မင်လေးတွေကိုအဆုံးပြုပြီးတော့"],[15,"အံ့သြစရာအချစ်ဇာတ်လမ်းလေးတွေကိုဖန်တီးခဲ့တာဘဲ"],[20,"အချစ်လေးရေ.. ဆရာမလေးရဲ့အချစ်ကရွှေဝါရောင်လေးလိုပါဘဲ"],[25,"ဆရာမလေးရဲ့အချစ်နဲ့ထိတွေ့လိုက်မှဘဲ"],[27,"ကျွန်တော့်ရဲ့ဘဝဟာလင်းလက်တောက်ပလာခဲ့တယ်"],[29,"နေ့တိုင်းမှာလည်း ဆရာမလေးကိုဘဲစိုးရိမ်ပူပန်နေသလို"],[33,"ညတွေတိုင်းမှာလည်း ဆရာမလေးအေးချမ်းနေဖို့ကိုဘဲ ကိုယ်ဆုတောင်းနေမိတယ်"]];
+var PHOTOS=["https://cdn.phototourl.com/member/2026-10-16-61e13285-a02b-435b-ab32-526531cc27eb.jpg","https://cdn.phototourl.com/member/2026-10-16-7bbec013-bcdd-4114-abc0-1ea289a4aa0b.jpg","https://cdn.phototourl.com/member/2026-10-16-9147cb08-db72-4f3d-a387-243abd529a29.jpg","https://cdn.phototourl.com/member/2026-10-16-9147cb08-db72-4f3d-a387-243abd529a29.jpg","https://cdn.phototourl.com/member/2026-10-16-9147cb08-db72-4f3d-a387-243abd529a29.jpg","https://cdn.phototourl.com/member/2026-10-16-9147cb08-db72-4f3d-a387-243abd529a29.jpg"];
+var au=document.getElementById('au');
+var started=false,curLine=-1,curPhoto=-1;
+function hideScenes(){var s=document.querySelectorAll('.scene');for(var i=0;i<s.length;i++)s[i].classList.remove('active');}
+function go(n){hideScenes();document.getElementById('s'+n).classList.add('active');}
+function startCount(){hideScenes();document.getElementById('cd').style.display='flex';var num=document.getElementById('cdNum');var n=3;
+function tick(){num.style.animation='none';void num.offsetWidth;num.style.animation='';
+if(n>0){num.textContent=n;n--;setTimeout(tick,1000);}else{num.textContent='❤';setTimeout(openFinal,900);}}
+tick();}
+function openFinal(){document.getElementById('cd').style.display='none';document.getElementById('final').style.display='block';setupPhotos();tryPlay();}
+function setupPhotos(){if(!PHOTOS.length)return;document.body.classList.remove('noPhoto');document.body.classList.add('hasPhoto');var box=document.getElementById('photos');
+for(var i=0;i<PHOTOS.length;i++){var im=new Image();im.src=PHOTOS[i];box.appendChild(im);}
+if(box.children[0])box.children[0].classList.add('on');}
+function tryPlay(){var p=au.play();
+if(p&&p.then){p.then(startShow).catch(function(){document.getElementById('playBtn').style.display='block';});}else{startShow();}}
+function startShow(){if(started)return;started=true;document.getElementById('playBtn').style.display='none';requestAnimationFrame(loop);}
+function loop(){var d=(au.duration&&isFinite(au.duration))?au.duration:42;var t=au.currentTime;
+var li=0;for(var ix=1;ix<LYRICS.length;ix++){if(t>=LYRICS[ix][0])li=ix;else break;}
+if(li!==curLine){showLine(li);curLine=li;}
+if(PHOTOS.length){var ps=d/PHOTOS.length;var pi=Math.floor(t/ps);if(pi>=PHOTOS.length)pi=PHOTOS.length-1;
+if(pi!==curPhoto){var ims=document.getElementById('photos').children;for(var i=0;i<ims.length;i++){ims[i].classList.toggle('on',i===pi);}curPhoto=pi;}}
+document.getElementById('prog').style.width=(Math.max(0,Math.min(100,t/d*100)))+'%';document.getElementById('timeMark').textContent=fmtTime(t);
+if(au.ended){document.getElementById('end').style.display='flex';return;}
+requestAnimationFrame(loop);}
+function fmtTime(t){t=Math.max(0,Math.floor(t||0));return String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');}
+function showLine(i){var box=document.getElementById('lyric');box.classList.remove('lyIn');box.classList.add('lyOut');
+setTimeout(function(){box.innerHTML='<div class="lyric-kicker">A LITTLE VERSE, JUST FOR YOU</div><div class="verse-no">'+String(i+1).padStart(2,'0')+'</div><div class="hi">'+LYRICS[i][1]+'</div><div class="separator">✧</div><div class="my">— with all my love —</div>';box.classList.remove('lyOut');box.classList.add('lyIn');},360);}
+(function(){var h=document.getElementById('hearts');var em=['❤','💖','💘','💕','🌸','🎵'];
+for(var i=0;i<26;i++){var s=document.createElement('span');s.textContent=em[i%em.length];s.style.left=(Math.random()*100)+'%';s.style.fontSize=(13+Math.random()*22)+'px';s.style.animationDuration=(7+Math.random()*9)+'s';s.style.animationDelay=(Math.random()*9)+'s';h.appendChild(s);}})();
+</script>
+</body>
+</html>
